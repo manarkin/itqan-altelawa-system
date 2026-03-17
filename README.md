@@ -36,6 +36,4 @@
 ## 🚀 Quick Start
 
 ```bash
-
-git clone https://github.com/manarkin/Itqan.git
-cd Itqan
+git clone https://github.com/manarkin/itqan-altelawa-system.git
