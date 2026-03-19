@@ -46,6 +46,34 @@ font-size:20px;
 margin-bottom:40px;
 }
 
+
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 40px;
+background:white;
+border-bottom:2px solid #FF9933;
+}
+
+/* logo + title */
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo{
+width:40px;
+height:auto;
+}
+
+.title{
+color:#026E81;
+margin:0;
+}
+
 /* buttons */
 
 .buttons{
@@ -114,6 +142,8 @@ background:white;
 margin-top:15px;
 }
 
-.footer-links span{
+.footer-links a{
 margin:0 15px;
+color:black;
+text-decoration:none;
 }
