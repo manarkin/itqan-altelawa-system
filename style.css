@@ -1,6 +1,11 @@
+
+*{
+font-family: "Tajawal", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
 body{
 margin:0;
-font-family:Arial;
 background:#eef5f7;
 text-align:center;
 direction:rtl;
@@ -19,6 +24,7 @@ border-bottom:2px solid #FF9933;
 
 .title{
 color:#026E81;
+font-weight: 400;
 }
 
 .nav a{
@@ -44,6 +50,9 @@ margin-bottom:20px;
 color:#FF9933;
 font-size:20px;
 margin-bottom:40px;
+font-family: "Amiri", serif;
+font-weight: 400;
+font-style: normal;
 }
 
 
@@ -81,13 +90,47 @@ display:flex;
 justify-content:center;
 gap:20px;
 }
+/* login page top buttons*/
+.abutton{
+  font-weight: 500;
+  background: #ffffff;
+  color: #026E81;
+  border-width: 1px;
+  border-color: #bbbbbb;
+  border-style: solid;
+  padding: 5px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/* login page icon */
+.lockIcon{
+    width: 16%;
+}
+/*login form*/
+form{
+    text-align: right;
+    font-size: 10px;
+    color: #FF9933;
+}
+.label{
+font-weight: 600;
+color: #FF9933;
+}
 
+input{
+    width: 70%;
+    border-color: #FF9933;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 10px;
+}
 .start{
 background:#026E81;
 color:white;
 border:none;
 padding:15px 35px;
-border-radius:15px;
+border-radius:13px;
 font-size:18px;
 }
 
@@ -99,7 +142,11 @@ padding:15px 35px;
 border-radius:15px;
 font-size:18px;
 }
+h3{
 
+font-weight: 700;
+
+}
 /* cards */
 
 .features{
