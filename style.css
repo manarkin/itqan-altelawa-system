@@ -239,13 +239,16 @@ color: #FF9933;
 }
 
 input{
-width: 70%;
-border-color: #FF9933;
-border-style: solid;
-border-radius: 5px;
-border-width: 1px;
-padding: 10px;
+    width: 70%;
+    border-color: #FF9933;
+    border-style: solid;
+    border-radius:10px;
+    border-width: 1px;
+    padding: 10px 12px;
+    background: #fff;
+    font-size:14px;
 }
+
 .start{
 background:#026E81;
 color:white;
