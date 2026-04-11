@@ -4,14 +4,13 @@ font-family: "Tajawal", sans-serif;
 font-weight: 400;
 font-style: normal;
 }
+
 body{
 margin:0;
 background:#eef5f7;
 text-align:center;
 direction:rtl;
 }
-
-/* header */
 
 header{
 display:flex;
@@ -20,6 +19,135 @@ justify-content:space-between;
 padding:15px 40px;
 background:white;
 border-bottom:2px solid #FF9933;
+}
+
+.logoutIcon {
+width: 24px;
+height: 24px;
+margin-left: 20px;
+transition: opacity 0.3s;
+filter: brightness(0) saturate(100%) invert(36%) sepia(96%) saturate(740%) hue-rotate(131deg) brightness(91%) contrast(92%);
+}
+
+.logoutIcon:hover {
+opacity: 0.7;
+}
+
+
+.hero{
+padding:60px 40px;
+}
+
+.welcome{
+color:#FF9933;
+font-size:48px;
+margin-bottom:30px;
+text-align:right;
+}
+
+
+.classCard{
+background:#FF9933;
+color:white;
+padding:40px;
+border-radius:40px;
+margin-bottom:50px;
+position:relative;
+margin-right: 20px;
+margin-left: 50px;
+}
+
+.classTitle{
+font-size:36px;
+margin-bottom:30px;
+}
+
+.classInfo{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+}
+
+.classInfo div{
+text-align:right;
+}
+
+.classInfo .label{
+font-size:14px;
+opacity:0.8;
+}
+
+
+.level{
+position:absolute;
+left:30px;
+top:30px;
+background:#ffa94d;
+padding:15px 20px;
+border-radius:15px;
+text-align:center;
+}
+
+.level span{
+color:#026E81;
+font-weight:bold;
+font-size:18px;
+}
+
+.grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 40px;
+padding: 20px 40px;
+}
+
+.box {
+background: white;
+border: 2px solid #FF9933;
+border-radius: 30px;
+padding: 30px;
+text-align: right;
+margin: 10px 0; 
+}
+
+.box h3{
+color:#FF9933;
+margin-bottom:20px;
+}
+
+.announce {
+border-right: 4px solid #026E81;
+padding-right: 15px;
+margin-bottom: 20px;
+text-align: right;       
+direction: rtl;          
+}
+
+.announce > div {
+font-size: 16px;
+margin-bottom: 5px;
+font-weight: 500;
+}
+
+.announce span {
+font-size: 12px;
+color: #777;
+display: block;        
+margin-top: 3px;
+text-align: right;    
+direction: ltr;
+}
+
+.students {
+grid-column: span 2;
+margin-top: 10px;
+}
+
+.student{
+background:#f7f7f7;
+padding:15px;
+border-radius:12px;
+margin:10px 0;
 }
 
 .title{
@@ -33,8 +161,6 @@ text-decoration:none;
 color:#026E81;
 font-weight:bold;
 }
-
-/* hero */
 
 .hero{
 padding:80px 20px;
@@ -55,7 +181,6 @@ font-weight: 400;
 font-style: normal;
 }
 
-
 header{
 display:flex;
 align-items:center;
@@ -64,8 +189,6 @@ padding:10px 40px;
 background:white;
 border-bottom:2px solid #FF9933;
 }
-
-/* logo + title */
 
 .brand{
 display:flex;
@@ -83,34 +206,32 @@ color:#026E81;
 margin:0;
 }
 
-/* buttons */
-
 .buttons{
 display:flex;
 justify-content:center;
 gap:20px;
 }
-/* login page top buttons*/
+
 .abutton{
-  font-weight: 500;
-  background: #ffffff;
-  color: #026E81;
-  border-width: 1px;
-  border-color: #bbbbbb;
-  border-style: solid;
-  padding: 5px 30px;
-  border-radius: 10px;
-  cursor: pointer;
+font-weight: 500;
+background: #ffffff;
+color: #026E81;
+border-width: 1px;
+border-color: #bbbbbb;
+border-style: solid;
+padding: 5px 30px;
+border-radius: 10px;
+cursor: pointer;
 }
-/* login page icon */
+
 .lockIcon{
-    width: 16%;
+width: 16%;
 }
-/*login form*/
+
 form{
-    text-align: right;
-    font-size: 10px;
-    color: #FF9933;
+text-align: right;
+font-size: 10px;
+color: #FF9933;
 }
 .label{
 font-weight: 600;
@@ -121,10 +242,13 @@ input{
     width: 70%;
     border-color: #FF9933;
     border-style: solid;
-    border-radius: 5px;
+    border-radius:10px;
     border-width: 1px;
-    padding: 10px;
+    padding: 10px 12px;
+    background: #fff;
+    font-size:14px;
 }
+
 .start{
 background:#026E81;
 color:white;
@@ -132,6 +256,11 @@ border:none;
 padding:15px 35px;
 border-radius:13px;
 font-size:18px;
+text-decoration: none;
+}
+
+.start:hover{
+background:#024d5c;
 }
 
 .login{
@@ -141,13 +270,17 @@ color:#026E81;
 padding:15px 35px;
 border-radius:15px;
 font-size:18px;
+text-decoration: none;
 }
+
+.login:hover{
+background:#FF9933;
+}
+
+
 h3{
-
 font-weight: 700;
-
 }
-/* cards */
 
 .features{
 display:flex;
@@ -162,6 +295,8 @@ width:300px;
 padding:40px;
 border:2px solid #FF9933;
 border-radius:30px;
+margin:60px auto;   
+text-align:center;
 }
 
 .card h3{
@@ -176,8 +311,6 @@ color:#333;
 font-size:40px;
 margin-bottom:10px;
 }
-
-/* footer */
 
 footer{
 border-top:2px solid #FF9933;
@@ -194,3 +327,4 @@ margin:0 15px;
 color:black;
 text-decoration:none;
 }
+
