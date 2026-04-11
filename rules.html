@@ -1,77 +1,92 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
-  <title>شروط التسجيل — نادي إتقان التلاوة</title>
+<title>الشروط</title>
 </head>
-<body>
-  <header>
-    <div class="brand">
-      <img src="logo.png" alt="شعار النادي" class="logo" />
-      <h2 class="title">نادي إتقان التلاوة</h2>
+
+<body class="bg-light text-center">
+
+<!-- Header (MATCH INDEX) -->
+<header class="bg-white">
+<div class="container-fluid">
+
+    <nav class="navbar navbar-expand-sm float-start">
+        <ul class="nav navbar-tabs">
+            <li class="nav-item">
+                <a href="about.html" class="nav-link text-secondary fw-bold">حول</a>
+            </li>
+            <li class="nav-item">
+                <a href="index.html" class="nav-link text-secondary fw-bold">الرئيسية</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="float-end">
+        <img src="logo.png" class="rounded float-end" width="40px">
+        <div class="fw-bold text-dark">نادي إتقان التلاوة</div> 
     </div>
 
-<div class="nav">
-  <a href="index.html">الرئيسية</a>
-  <a href="about.html">حول</a>
 </div>
 
-  </header>
+<br><br>
+<hr class="border border-warning border-2 opacity-75">
+</header>
 
-  <section class="hero rules-hero">
-    <div class="rules-wrap">
-      <h1 class="rules-title">شروط التسجيل</h1>
+<!-- Title -->
+<section class="container my-5">
+  <h1 class="text-info">شروط التسجيل</h1>
+</section>
 
-  <table class="rules-table" role="table" aria-label="شروط التسجيل">
-    <thead>
+<!-- Table -->
+<div class="container mb-5">
+
+  <table class="table text-center">
+    <thead class="table-light">
       <tr>
-        <th colspan="2" class="rules-head">يرجى قراءة الشروط قبل إتمام التسجيل</th>
+        <th colspan="2">يرجى قراءة الشروط قبل التسجيل</th>
       </tr>
     </thead>
+
     <tbody>
-      <tr class="rule-row">
-        <td class="rules-num"><span class="badge">1</span></td>
-        <td class="rules-card">
-          <p class="rules-text">أن يكون المتقدم حاليًا طالبًا أو موظفًا في الجامعة.</p>
-        </td>
+      <tr>
+        <td>1</td>
+        <td>أن يكون المتقدم طالبًا أو موظفًا في الجامعة</td>
       </tr>
-      <tr class="rule-row">
-        <td class="rules-num"><span class="badge">2</span></td>
-        <td class="rules-card">
-          <p class="rules-text">الالتزام بالحضور في المواعيد المحددة للحلقات.</p>
-        </td>
+      <tr>
+        <td>2</td>
+        <td>الالتزام بالحضور في المواعيد المحددة</td>
       </tr>
-      <tr class="rule-row">
-        <td class="rules-num"><span class="badge">3</span></td>
-        <td class="rules-card">
-          <p class="rules-text">التحلّي بالآداب الإسلامية والالتزام بأنظمة النادي.</p>
-        </td>
+      <tr>
+        <td>3</td>
+        <td>الالتزام بالآداب الإسلامية وأنظمة النادي</td>
       </tr>
     </tbody>
   </table>
 
- <div class="buttons">
-    <a href="index.html">
-        <button class="start">العودة للرئيسية</button>
-    </a>
 </div>
 
-  </section>
+<!-- Button -->
+<div class="mb-5">
+  <a href="index.html" class="btn btn-outline-warning">العودة للرئيسية</a>
+</div>
 
-  <footer>
-    <p>© 2026 نادي إتقان التلاوة</p>
-    <div class="footer-links">
-      <a href="contact.html">اتصل بنا</a>
-      <a href="rules.html">الشروط</a>
+<!-- Footer -->
+<footer class="mt-5 bg-white">
+    <hr class="border border-warning border-2 opacity-75 mx-auto">
+    <div class="container pb-4">
+        <p>© 2026 نادي إتقان التلاوة</p>
+        
+        <div class="d-flex justify-content-center gap-4">
+            <a href="contact.html" class="text-decoration-none text-secondary">اتصل بنا</a>
+            <a href="rules.html" class="text-decoration-none text-secondary">الشروط</a>
+        </div>
     </div>
-  </footer>
+</footer>
+
 </body>
 </html>
