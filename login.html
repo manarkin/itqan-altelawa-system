@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="rtl">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,62 +19,118 @@
 
   <body>
     <div class="container-fluid">
-      <div class="row" style="height: 15%"></div>
-      <div class="row" style="height: 70%">
-        <div class="card" style="width: 400px">
+      <header class="bg-white">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-sm navbar-black float-start">
+            <ul class="nav navbar-tabs">
+              <li class="nav-item">
+                <a
+                  href="about.html"
+                  class="nav-link active text-secondary fw-bold"
+                  href="about.html"
+                  >حول</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href="index.html"
+                  class="nav-link active text-secondary fw-bold"
+                  href="index.html"
+                  >الرئيسية</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="float-end">
+            <img
+              src="logo.png"
+              alt="شعار النادي"
+              class="rounded float-end"
+              width="40px"
+            />
+            <div class="col text-dark fw-bold">نادي إتقان التلاوة</div>
+          </div>
+        </div>
+
+        <br /><br />
+        <hr class="border border-warning border-2 opacity-75" />
+      </header>
+      <div class="row justify-content-center" style="height: 70%">
+        <div
+          class="card rounded-5 border-warning border-3 p-4"
+          style="width: 400px"
+        >
           <img
             src="lock.png"
             alt="logo picture"
-            class="card-img rounded-circle mx-auto d-block"
+            class="mx-auto d-block"
             width="40"
             height="40"
           />
           <div class="card-body">
-            <h2 class="text-center">مرحبًا بك مجددًا</h2>
+            <h2 class="text-center text-info">مرحبًا بك مجددًا</h2>
             <p class="text-center">قم بتسجيل الدخول إلى حسابك</p>
-            <div class="btn-group">
-              <button type="button" class="btn btn-outline-secondary">
+            <div class="btn-group d-flex justify-content-center mb-4">
+              <button
+                type="button"
+                class="btn btn-outline-secondary texy text-info"
+              >
                 إدارية
               </button>
-              <button type="button" class="btn btn-outline-secondary">
+              <button type="button" class="btn btn-outline-secondary text-info">
                 معلمة
               </button>
-              <button type="button" class="btn btn-outline-secondary">
+              <button type="button" class="btn btn-outline-secondary text-info">
                 طالبة
               </button>
             </div>
             <form action="">
-              <div class="mb-3 mt-3">
-                <label for="email">البريدالإلكتروني</label>
+              <div class="mb-4 mt-3">
+                <label for="email" class="text-warning">البريدالإلكتروني</label>
                 <input
                   type="email"
-                  class="form-control"
+                  class="form-control border-warning border-2"
                   placeholder="بريدك الجامعي"
                   name="email"
                 />
               </div>
               <div class="mb-3">
-                <label for="pwd">كلمة المرور</label>
+                <label for="pwd" class="text-warning">كلمة المرور</label>
                 <input
                   type="password"
-                  class="form-control"
+                  class="form-control border-warning border-2"
                   placeholder="كلمة المرور"
                   name="pswd"
                 />
               </div>
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn btn-info text-white rounded-3">
                 تسجيل الدخول
               </button>
             </form>
-            <hr />
+            <hr class="border-warning border-5" />
             <p>
-              ليس لديك حساب؟<a href="register.html" class="label">سجل الان</a>
+              ليس لديك حساب؟<a href="register.html" class="label text-warning"
+                >سجل الان</a
+              >
             </p>
           </div>
         </div>
       </div>
 
-      <div class="row" style="height: 15%"></div>
+      <footer class="mt-5 bg-white">
+        <hr class="border border-warning border-2 opacity-75 mx-auto" />
+        <div class="container pb-4">
+          <p class="mb-3">© 2026 نادي إتقان التلاوة</p>
+
+          <div class="d-flex justify-content-center gap-4">
+            <a href="contact.html" class="text-decoration-none text-secondary"
+              >اتصل بنا</a
+            >
+            <a href="#" class="text-decoration-none text-secondary">الشروط</a>
+          </div>
+        </div>
+        <br />
+      </footer>
     </div>
   </body>
 </html>
