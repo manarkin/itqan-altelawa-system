@@ -137,6 +137,55 @@ crossorigin="anonymous"></script>
   <a href="index.html" class="btn btn-outline-warning">العودة للرئيسية</a>
 </div>
 
+<script>
+// Contact Form Validation - validates name, email, message
+document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let isValid = true;
+    
+    // Get values
+    let name = document.querySelector("input[name='name']").value.trim();
+    let email = document.querySelector("input[name='email']").value.trim();
+    let message = document.querySelector("textarea[name='message']").value.trim();
+    
+    // Clear previous error messages
+    document.querySelectorAll(".error-message").forEach(el => el.remove());
+    
+    // 1. Name validation: only Arabic/English letters and spaces, min 3 chars
+    let namePattern = /^[A-Za-z\u0600-\u06FF\s]{3,}$/;
+    if (!namePattern.test(name)) {
+        showError("name", "الاسم يجب أن يحتوي على 3 أحرف على الأقل (حروف فقط)");
+        isValid = false;
+    }
+    
+    // 2. Email validation: must contain @ and . 
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        showError("email", "البريد الإلكتروني غير صحيح (example@domain.com)");
+        isValid = false;
+    }
+    
+    // 3. Message validation: min 10 characters
+    if (message.length < 10) {
+        showError("message", "الرسالة يجب أن تحتوي على 10 أحرف على الأقل");
+        isValid = false;
+    }
+    
+    if (isValid) {
+        alert("✓ تم إرسال رسالتك بنجاح!");
+        this.submit();
+    }
+});
+
+function showError(fieldName, message) {
+    let input = document.querySelector(`input[name='${fieldName}'], textarea[name='${fieldName}']`);
+    let error = document.createElement("div");
+    error.className = "error-message text-danger mt-1 small";
+    error.innerText = message;
+    input.parentNode.appendChild(error);
+}
+</script>
+
 <footer class="mt-5 bg-white">
     <hr class="border border-warning border-2 opacity-75 mx-auto">
     <div class="container pb-4">
