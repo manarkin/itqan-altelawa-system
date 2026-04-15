@@ -1,178 +1,149 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>نادي إتقان التلاوة</title>
+</head>
 
-    <title>نادي إتقان التلاوة</title>
-  </head>
+<body>
+<div class="container-fluid">
 
-  <body>
-    <div class="container-fluid">
-      <header class="bg-white">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-sm navbar-black float-start">
-            <ul class="nav navbar-tabs">
-              <li class="nav-item">
-                <a
-                  href="about.html"
-                  class="nav-link active text-secondary fw-bold"
-                  href="about.html"
-                  >حول</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  href="index.html"
-                  class="nav-link active text-secondary fw-bold"
-                  href="index.html"
-                  >الرئيسية</a
-                >
-              </li>
+
+
+<header class="bg-white">
+    <nav class="navbar navbar-white d-flex justify-content-between" dir="rtl">
+
+
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="images/logo.png" alt="شعار النادي" class="rounded ms-2" width="40">
+            <span class="text-dark fw-bold fs-5">نادي إتقان التلاوة</span>
+        </a>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav text-end">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active text-secondary fw-bold">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link text-secondary fw-bold">حول</a>
+                </li>
+                </li class="nav-item">
+                    <a href="funpage.html" class="nav-link text-secondary fw-bold">ترفيه</a>
+                </li>
+                <li class="nav-item">
+                    <a href="questionnaire.html" class="nav-link text-secondary fw-bold">استبيان</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calculate.html" class="nav-link text-secondary fw-bold">حاسبة</a>
+                </li>
+
             </ul>
-          </nav>
-          <div class="float-end">
-            <img
-              src="logo.png"
-              alt="شعار النادي"
-              class="rounded float-end"
-              width="40px"
+        </div>
+
+    </nav>
+
+    <hr class="border border-warning border-2 opacity-75">
+</header>
+
+<section>
+  <div class="row justify-content-center" style="height: 70%">
+    <div
+      class="card rounded-5 border-warning border-3 p-4"
+      style="width: 400px"
+    >
+      <img
+        src="images/lock.png"
+        alt="logo picture"
+        class="mx-auto d-block"
+        width="40"
+        height="40"
+      />
+      <div class="card-body">
+        <h2 class="text-center text-info">مرحبًا بك مجددًا</h2>
+        <p class="text-center">قم بتسجيل الدخول إلى حسابك</p>
+        <div class="btn-group d-flex justify-content-center mb-4">
+          <button
+            type="button"
+            class="btn btn-outline-secondary texy text-info"
+          >
+            إدارية
+          </button>
+          
+          <a href="teacher_page.html" class="btn btn-outline-secondary text-info">
+            معلمة
+      
+          </a>
+
+
+          <a href="student_page.html" class="btn btn-outline-secondary text-info">
+            طالبة
+          </a>
+        </div>
+        <form action="">
+          <div class="mb-4 mt-3">
+            <label for="email" class="text-warning">البريدالإلكتروني</label>
+            <input
+              type="email"
+              class="form-control border-warning border-2"
+              placeholder="بريدك الجامعي"
+              name="email"
             />
-            <div class="col text-dark fw-bold">نادي إتقان التلاوة</div>
           </div>
-        </div>
-
-        <br /><br />
-        <hr class="border border-warning border-2 opacity-75" />
-      </header>
-      <div class="row justify-content-center" style="height: 70%">
-        <div
-          class="card rounded-5 border-warning border-3 p-4"
-          style="width: 400px"
-        >
-          <img
-            src="lock.png"
-            alt="logo picture"
-            class="mx-auto d-block"
-            width="40"
-            height="40"
-          />
-          <div class="card-body">
-            <h2 class="text-center text-info">مرحبًا بك مجددًا</h2>
-            <p class="text-center">قم بتسجيل الدخول إلى حسابك</p>
-            <div class="btn-group d-flex justify-content-center mb-4">
-              <button
-                type="button"
-                class="btn btn-outline-secondary texy text-info"
-              >
-                إدارية
-              </button>
-              <button type="button" class="btn btn-outline-secondary text-info">
-                معلمة
-              </button>
-              <button type="button" class="btn btn-outline-secondary text-info">
-                طالبة
-              </button>
-            </div>
-            <form action="" class="needs-validation" novalidate dir="rtl">
-              <div class="mb-4 mt-3 text-end">
-                <label for="email" class="form-label text-warning fw-bold"
-                  >البريد الإلكتروني</label
-                >
-                <input
-                  type="email"
-                  class="form-control border-warning border-2 rounded-pill"
-                  placeholder="بريدك الجامعي"
-                  name="email"
-                  id="email"
-                  required
-                />
-                <div class="valid-feedback px-3">تبدو المعلومات صحيحة!</div>
-                <div class="invalid-feedback px-3">
-                  يرجى إدخال البريد الجامعي بشكل صحيح.
-                </div>
-              </div>
-
-              <div class="mb-3 text-end">
-                <label for="pwd" class="form-label text-warning fw-bold"
-                  >كلمة المرور</label
-                >
-                <input
-                  type="password"
-                  class="form-control border-warning border-2 rounded-pill"
-                  placeholder="كلمة المرور"
-                  name="pswd"
-                  id="pwd"
-                  required
-                  minlength="8"
-                />
-                <div class="invalid-feedback px-3">
-                  يجب أن تحتوي كلمة المرور على 8 رموز على الأقل.
-                </div>
-              </div>
-
-              <button
-                type="submit"
-                class="btn btn-info text-white rounded-pill w-100 py-2"
-              >
-                تسجيل الدخول
-              </button>
-            </form>
-            <script>
-              (function () {
-                "use strict";
-                var forms = document.querySelectorAll(".needs-validation");
-                Array.prototype.slice.call(forms).forEach(function (form) {
-                  form.addEventListener(
-                    "submit",
-                    function (event) {
-                      if (!form.checkValidity()) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                      }
-                      form.classList.add("was-validated");
-                    },
-                    false,
-                  );
-                });
-              })();
-            </script>
-
-            <hr class="border-warning border-5" />
-            <p>
-              ليس لديك حساب؟<a href="register.html" class="label text-warning"
-                >سجل الان</a
-              >
-            </p>
+          <div class="mb-3">
+            <label for="pwd" class="text-warning">كلمة المرور</label>
+            <input
+              type="password"
+              class="form-control border-warning border-2"
+              placeholder="كلمة المرور"
+              name="pswd"
+            />
           </div>
-        </div>
+          <button type="submit" class="btn btn-info text-white rounded-3">
+            تسجيل الدخول
+          </button>
+        </form>
+        <hr class="border-warning border-5" />
+        <p>
+          ليس لديك حساب؟<a href="register.html" class="label text-warning"
+            >سجل الان</a
+          >
+        </p>
       </div>
-
-      <footer class="mt-5 bg-white">
-        <hr class="border border-warning border-2 opacity-75 mx-auto" />
-        <div class="container pb-4">
-          <p class="mb-3">© 2026 نادي إتقان التلاوة</p>
-
-          <div class="d-flex justify-content-center gap-4">
-            <a href="contact.html" class="text-decoration-none text-secondary"
-              >اتصل بنا</a
-            >
-            <a href="#" class="text-decoration-none text-secondary">الشروط</a>
-          </div>
-        </div>
-        <br />
-      </footer>
     </div>
-  </body>
+  </div>
+</div>
+</section>
+
+<footer class="mt-5 bg-white text-center">
+    <hr class="border border-warning border-2 opacity-75 mx-auto">
+    <div class="container pb-4">
+        <p class="mb-3">© 2026 نادي إتقان التلاوة</p>
+        
+        <div class="d-flex justify-content-center gap-4">
+            <a href="contact.html" class="text-decoration-none text-secondary">اتصل بنا</a>
+            <a href="rules.html" class="text-decoration-none text-secondary">الشروط</a>
+        </div>
+        
+    </div>
+    <br/>
+</footer>
+
+</body>
 </html>
