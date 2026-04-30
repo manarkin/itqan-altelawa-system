@@ -1,188 +1,288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">  
+  <meta charset="UTF-8" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+  ></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
   <title>إنشاء حساب — نادي إتقان التلاوة</title>
-  <style>
-    .register-wrapper{max-width:620px;margin:40px auto 80px;background:#fff;border:2px solid #FF9933;border-radius:24px;box-shadow:0 10px 24px rgba(2,110,129,.08);padding:28px 24px 32px}
-    .register-title{color:#026E81;font-weight:700;font-size:26px;text-align:center;margin:6px 0 4px}
-    .register-subtitle{color:#026E81;font-size:12px;text-align:center;margin-bottom:18px;opacity:.85}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .col-span-2{grid-column:span 2}
-    .register-label{display:block;font-size:12px;font-weight:600;color:#FF9933;margin:6px 6px 4px}
-    .register-input,.register-select,.register-textarea{width:100%;border:1px solid #FF9933;border-radius:10px;padding:10px 12px;font-size:14px;background:#fff}
-    .register-textarea{min-height:96px;resize:vertical}
-    .section-title{margin:12px 0 4px;font-weight:700;color:#026E81;border-bottom:1px dashed #FF9933;padding-bottom:6px}
-    .upload-box{display:flex;align-items:center;gap:10px;color:#777;font-size:12px}
-    .cta{display:block;width:100%;margin-top:8px}
-    .divider{margin:18px 0;border:0;border-top:1px solid #eee}
-    .foot-note{text-align:center;font-size:12px;color:#333}
-    .foot-note a{color:#026E81;text-decoration:none;font-weight:600}
-    .req{color:#d9534f}
-    @media (max-width:640px){.form-grid{grid-template-columns:1fr}.col-span-2{grid-column:auto}}
-  </style>
 </head>
+
+
 <body>
-  <header>
-    <div class="brand">
-      <img src="logo.png" alt="شعار النادي" class="logo">
-      <h2 class="title">نادي إتقان التلاوة</h2>
-    </div>
-    <div class="nav">
-      <a href="about.html">حول</a>
-      <a href="index.html">الرئيسية</a>
-    </div>
-  </header>
 
-  <section class="hero" style="padding-top:40px;">
-    <div class="register-wrapper" role="form" aria-labelledby="regTitle">
-      <h1 id="regTitle" class="register-title">إنشاء حساب</h1>
-      <div class="register-subtitle">انضم إلى نادي إتقان التلاوة</div>
-        <form>
-        <div class="form-grid">
-          <div class="col-span-2">
-            <label class="register-label" for="role">صفة المستخدم <span class="req">*</span></label>
-            <select id="role" name="role" class="register-select" required>
-              <option value="" disabled selected>اختر الصفة</option>
-              <option value="student">طالب</option>
-              <option value="teacher">معلم</option>
-            </select>
-          </div>
+<header class="bg-white">
+    <nav class="navbar navbar-white d-flex justify-content-between" dir="rtl">
+ 
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="images/logo.png" alt="شعار النادي" class="rounded ms-2" width="40">
+            <span class="text-dark fw-bold fs-5">نادي إتقان التلاوة</span>
+        </a>
 
-          <div>
-            <label class="register-label" for="firstName">الاسم الأول <span class="req">*</span></label>
-            <input id="firstName" name="firstName" class="register-input" placeholder="الاسم الأول" required>
-          </div>
-          <div>
-            <label class="register-label" for="lastName">الاسم الأخير <span class="req">*</span></label>
-            <input id="lastName" name="lastName" class="register-input" placeholder="الاسم الأخير" required>
-          </div>
 
-          <div class="col-span-2">
-            <label class="register-label" for="email">البريد الإلكتروني <span class="req">*</span></label>
-            <input id="email" type="email" name="email" class="register-input" placeholder="name@university.edu" required>
-          </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div>
-            <label class="register-label" for="phone">رقم الهاتف</label>
-            <input id="phone" name="phone" class="register-input" inputmode="tel" placeholder="+968 9000 0000">
-          </div>
-          <div>
-            <label class="register-label" for="college">الكلية</label>
-            <select id="college" name="college" class="register-select">
-              <option value="">اختر</option>
-              <option value="agr">العلوم الزراعية والبحرية</option>
-              <option value="sci">العلوم</option>
-              <option value="edu">التربية</option>
-              <option value="eng">الهندسة</option>
-              <option value="arts">الآداب</option>
-              <option value="cpes">الإقتصاد والعلوم السياسية</option>
-              <option value="law">الحقوق</option>
-              <option value="nrs">التمريض</option>
-            <option value="med"> الطب</option>
-            </select>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav text-end">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active text-secondary fw-bold">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link text-secondary fw-bold">حول</a>
+                </li>
+                </li class="nav-item">
+                    <a href="funpage.html" class="nav-link text-secondary fw-bold">ترفيه</a>
+                </li>
+                <li class="nav-item">
+                    <a href="questionnaire.html" class="nav-link text-secondary fw-bold">استبيان</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calculate.html" class="nav-link text-secondary fw-bold">حاسبة</a>
+                </li>
 
-          <div class="col-span-2 section-title">بيانات الطالب</div>
-          <div>
-            <label class="register-label" for="level">المستوى</label>
-            <select id="level" name="level" class="register-select">
-              <option value="">اختر المستوى</option>
-              <option value="beginner">مبتدئ</option>
-              <option value="intermediate">تمهيدي</option>
-              <option value="advanced">متقدم</option>
-            </select>
-          </div>
-          <div>
-            <label class="register-label" for="residency">السكن</label>
-            <select id="residency" name="residency" class="register-select">
-              <option value="">اختر السكن</option>
-              <option value="internal">سكن داخلي</option>
-              <option value="external">سكن خارجي</option>
-            </select>
-          </div>
-          <div>
-            <label class="register-label" for="group">الدفعة</label>
-            <select id="group" name="group" class="register-select">
-              <option value="">اختر </option>
-              <option value="1">2019</option>
-              <option value="2">2020</option>
-              <option value="3">2021</option>
-              <option value="4">2022</option>
-              <option value="5">2023</option>
-              <option value="6">2024</option>
-              <option value="7">2025</option>
-              <option value="8">2026</option>
-          
-            </select>
-          </div>
-          <div class="col-span-2">
-            <label class="register-label" for="studentNote">ملاحظة للطالب</label>
-            <textarea id="studentNote" name="studentNote" class="register-textarea" placeholder="أدخل أي معلومات إضافية"></textarea>
-          </div>
-
-          <div class="col-span-2 section-title">بيانات المعلم</div>
-          <div>
-            <label class="register-label" for="experience">سنوات الخبرة</label>
-            <select id="experience" name="experience" class="register-select">
-              <option value="">اختر</option>
-              <option value="0">بدون</option>
-              <option value="1-2">1–2</option>
-              <option value="3-5">3–5</option>
-              <option value="6-10">6–10</option>
-              <option value="10+">أكثر من 10</option>
-            </select>
-          </div>
-          <div>
-            <label class="register-label" for="level">المستوى</label>
-            <select id="level" name="level" class="register-select">
-              <option value="">اختر</option>
-              <option value="preIqraa">ماقبل الإقراء</option>
-              <option value="iqraaFirstsem">طالب إقراء في فصله الأول</option>
-              <option value="iqraa">طالب إقراء</option>
-              <option value="mujaz">مجاز </option>
-            </select>
-          </div>
-          <div>
-         
-          <div>
-            <label class="register-label" for="password">كلمة المرور <span class="req">*</span></label>
-            <input id="password" type="password" name="password" class="register-input" placeholder="••••••••" minlength="8" required>
-          </div>
-          <div>
-            <label class="register-label" for="confirm">تأكيد كلمة المرور <span class="req">*</span></label>
-            <input id="confirm" type="password" name="confirm" class="register-input" placeholder="••••••••" minlength="8" required>
-          </div>
-
-          <div class="col-span-2 upload-box">
-            <input id="policy" type="checkbox" name="policy" value="agree" required>
-            <label for="policy">أقرّ أن جميع البيانات المدخلة صحيحة لغرض التسجيل</label>
-          </div>
-
-          <div class="col-span-2">
-            <button type="submit" class="start cta">إتمام التسجيل</button>
-          </div>
+            </ul>
         </div>
 
-        <hr class="divider">
-        <p class="foot-note">
-         لديك حساب بالفعل؟ <a href="Login.html">تسجيل الدخول</a>
-        </p>
-      </form>
-    </div>
-  </section>
+    </nav>
 
-  <footer>
-    <p>© 2026 نادي إتقان التلاوة</p>
-    <div class="footer-links">
-      contact.htmlاتصل بنا</a>
-      #الشروط</a>
+    <hr class="border border-warning border-2 opacity-75">
+</header>
+
+<section class="container py-5">
+  <div class="d-flex justify-content-center">
+    <div
+      class="card rounded-5 border-warning border-3 p-4 shadow-sm"
+      style="max-width: 600px; width: 100%"
+    >
+      <div class="card-body text-center">
+        <h1 id="regTitle" class="text-info fw-bold display-5 mb-2">
+          إنشاء حساب
+        </h1>
+        <div class="text-muted mb-4">انضم إلى نادي إتقان التلاوة</div>
+
+        <form dir="rtl" class="text-end">
+          <div class="mb-3">
+            <label class="form-label text-warning fw-bold" for="role"
+              >طالبة/معلمة <span class="text-danger">*</span></label
+            >
+            <select
+              id="role"
+              name="role"
+              class="form-select rounded-pill border-warning"
+              required
+            >
+              <option value="" disabled selected>اختر</option>
+              <option value="student">طالبة</option>
+              <option value="teacher">معلمة</option>
+            </select>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label text-warning fw-bold" for="firstName"
+                >اسمك <span class="text-danger">*</span></label
+              >
+              <input
+                id="firstName"
+                name="firstName"
+                class="form-control rounded-pill border-warning"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-warning fw-bold" for="lastName"
+                >اسم الأب <span class="text-danger">*</span></label
+              >
+              <input
+                id="lastName"
+                name="lastName"
+                class="form-control rounded-pill border-warning"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label text-warning fw-bold" for="tribe"
+                >القبيلة <span class="text-danger">*</span></label
+              >
+              <input
+                id="tribe"
+                name="tribe"
+                class="form-control rounded-pill border-warning"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-warning fw-bold" for="email"
+                >البريد الإلكتروني <span class="text-danger">*</span></label
+              >
+              <input
+                id="email"
+                type="email"
+                name="email"
+                class="form-control rounded-pill border-warning"
+                placeholder="البريد الجامعي"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label text-warning fw-bold" for="phone"
+                >رقم الهاتف</label
+              >
+              <input
+                id="phone"
+                name="phone"
+                class="form-control rounded-pill border-warning"
+                placeholder="+968"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-warning fw-bold" for="level"
+                >المرحلة</label
+              >
+              <select
+                id="level"
+                name="level"
+                class="form-select rounded-pill border-warning"
+              >
+                <option value="">اختر المستوى</option>
+                <option value="beginner">مبتدئة</option>
+                <option value="intermediate">تمهيدية</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label text-warning fw-bold" for="college"
+                >الكلية</label
+              >
+              <select
+                id="college"
+                name="college"
+                class="form-select rounded-pill border-warning"
+              >
+                <option value="">اختر</option>
+                <option value="sci">العلوم</option>
+                <option value="edu">التربية</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-warning fw-bold" for="group"
+                >الدفعة</label
+              >
+              <select
+                id="group"
+                name="group"
+                class="form-select rounded-pill border-warning"
+              >
+                <option value="">اختر</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              <label class="form-label text-warning fw-bold" for="password"
+                >كلمة المرور <span class="text-danger">*</span></label
+              >
+              <input
+                id="password"
+                type="password"
+                name="password"
+                class="form-control rounded-pill border-warning"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-warning fw-bold" for="confirm"
+                >تأكيد كلمة المرور <span class="text-danger">*</span></label
+              >
+              <input
+                id="confirm"
+                type="password"
+                name="confirm"
+                class="form-control rounded-pill border-warning"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label text-warning fw-bold" for="idPic"
+              >صورة البطاقة الجامعية</label
+            >
+            <input
+              type="file"
+              id="idPic"
+              name="idPic"
+              class="form-control rounded-3 border-warning"
+              accept="image/*"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-info text-white w-100 rounded-pill py-2 fw-bold"
+          >
+            إتمام التسجيل
+          </button>
+
+          <hr class="my-4" />
+
+          <p class="text-center">
+            لديك حساب بالفعل؟
+            <a
+              href="Login.html"
+              class="text-info text-decoration-none fw-bold"
+              >تسجيل الدخول</a
+            >
+          </p>
+        </form>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<footer class="mt-5 bg-white">
+  <hr class="border border-warning border-2 opacity-75 mx-auto">
+  <div class="container pb-4">
+      <p class="mb-3">© 2026 نادي إتقان التلاوة</p>
+      
+      <div class="d-flex justify-content-center gap-4">
+          <a href="contact.html" class="text-decoration-none text-secondary">اتصل بنا</a>
+          <a href="rules.html" class="text-decoration-none text-secondary">الشروط</a>
+      </div>
+      
+  </div>
+  <br/>
+</footer>
 </body>
 </html>

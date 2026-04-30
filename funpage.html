@@ -10,12 +10,11 @@ crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
 crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<title>حول النادي </title>
+<title>Fun Page - نادي إتقان التلاوة</title>
 </head>
 
 <body class="bg-light text-center">
+
 <!-- Header -->
 <header class="bg-white">
     <nav class="navbar navbar-white d-flex justify-content-between" dir="rtl">
@@ -58,63 +57,124 @@ crossorigin="anonymous"></script>
     <hr class="border border-warning border-2 opacity-75">
 </header>
 
-<!-- Title Section -->
-<section class="container my-5">
-    <h1 class="text-primary">حول </h1>
-    <p class="text-dark">
-        نادي إتقان التلاوة هو مبادرة تهدف إلى تعزيز مهارات تلاوة القرآن الكريم وتجويده بين طلاب الجامعة.
-        نسعى من خلال برامجنا المتنوعة إلى إعداد جيل متقن لكتاب الله، ملم بأحكام التجويد، وقادر على التلاوة الصحيحة والمؤثرة.
-    </p>
+<!-- TITLE -->
+<section class="container my-4">
+    <h1 class="text-dark">اختبر معلوماتك في القرآن والتجويد 🎯</h1>
+    <p class="text-info">اختر السورة الصحيحة لكل معلومة</p>
 </section>
 
-<!-- Features -->
-<section class="container">
-    
-    <div class="d-flex justify-content-center gap-4 flex-wrap">
+<!-- GAME BOX -->
+<section class="container mb-5">
 
-        <div class="card bg-white shadow p-4" style="width:300px">
-            <div class="fs-1">👨‍🏫</div>
-            <h3>معلمون خبراء</h3>
-            <p>تعلم من مدربين معتمدين ذوي سنوات من الخبرة في علوم التجويد.</p>
-        </div>
+<div class="card p-4">
 
-        <div class="card bg-white shadow p-4" style="width:300px">
-            <div class="fs-1">🕒</div>
-            <h3>تعلم مرن</h3>
-            <p>ادرس بالوتيرة التي تناسبك من خلال منهجنا الشامل.</p>
-        </div>
+    <h5 id="question"></h5>
 
-    </div>
+    <div id="options" class="my-3"></div>
+
+    <button class="btn btn-info" onclick="checkAnswer()">تحقق</button>
+
+    <p id="result" class="mt-3 fw-bold"></p>
+
+</div>
 
 </section>
 
-<!-- Contact -->
-<section class="mt-5">
-    <p>للتواصل عبر البريد الإلكتروني:</p>
+<!-- JS -->
+<script>
+/*
+    Fun Quran & Tajweed Game
+    - Shows random question
+    - User selects answer
+    - Checks correctness
+*/
 
-    <a href="mailto:itqan@university.edu" class="btn btn-outline-warning mb-3">
-        itqan@university.edu
-    </a>
+/* QUESTIONS ARRAY */
+let questions = [
+    {
+        fact: "هذه السورة وردت فيها البسملة كجزء من اية",
+        options: ["النمل", "الفاتحة", "الإخلاص"],
+        answer: "النمل"
+    },
+    {
+        fact: "سورة تُسمى قلب القرآن",
+        options: ["يس", "البقرة", "الكهف"],
+        answer: "يس"
+    },
+    {
+        fact: "سورة فيها أطول آية في القرآن",
+        options: ["البقرة", "آل عمران", "النساء"],
+        answer: "البقرة"
+    }
+];
 
-    <br>
+let currentIndex = 0;
 
-    <a href="index.html" class="btn btn-outline-warning">
-        العودة للرئيسية
-    </a>
-</section>
+/* SHOW QUESTION FUNCTION */
+function showQuestion() {
+    let q = questions[currentIndex];
 
-<!-- Footer -->
+    document.getElementById("question").innerText = q.fact;
+
+    let optionsHTML = "";
+
+    for (let i = 0; i < q.options.length; i++) {
+        optionsHTML += `
+            <div>
+                <input type="radio" name="option" value="${q.options[i]}">
+                ${q.options[i]}
+            </div>
+        `;
+    }
+
+    document.getElementById("options").innerHTML = optionsHTML;
+}
+
+/* CHECK ANSWER FUNCTION */
+function checkAnswer() {
+    let q = questions[currentIndex];
+    let selected = document.querySelector('input[name="option"]:checked');
+
+    if (!selected) {
+        document.getElementById("result").innerText = "اختر إجابة أولاً";
+        return;
+    }
+
+    if (selected.value === q.answer) {
+        document.getElementById("result").innerText = "✔ إجابة صحيحة!";
+    } else {
+        document.getElementById("result").innerText = "✖ إجابة خاطئة";
+    }
+
+    setTimeout(() => {
+        currentIndex++;
+
+        if (currentIndex < questions.length) {
+            showQuestion();
+            document.getElementById("result").innerText = "";
+        } else {
+            document.getElementById("question").innerText = "انتهى الاختبار 🎉";
+            document.getElementById("options").innerHTML = "";
+            document.querySelector("button").style.display = "none";
+        }
+    }, 1000);
+}
+
+/* INIT */
+showQuestion();
+</script>
 <footer class="mt-5 bg-white">
     <hr class="border border-warning border-2 opacity-75 mx-auto">
+
     <div class="container pb-4">
         <p>© 2026 نادي إتقان التلاوة</p>
-        
+
         <div class="d-flex justify-content-center gap-4">
             <a href="contact.html" class="text-decoration-none text-secondary">اتصل بنا</a>
             <a href="rules.html" class="text-decoration-none text-secondary">الشروط</a>
         </div>
     </div>
-</footer>
 
+</footer>
 </body>
 </html>

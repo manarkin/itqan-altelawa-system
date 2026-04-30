@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>نادي إتقان التلاوة</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="bg-light" style="font-family: 'Tajawal', sans-serif;">
+
+<!-- Header -->
+<nav class="navbar navbar-expand-lg bg-white border-bottom border-warning border-2">
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="images/logo.png" width="40" class="rounded ms-2" alt="شعار النادي">
+            <span class="fw-bold">نادي إتقان التلاوة</span>
+        </a>
+
+        <!-- Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto text-end">
+                <li class="nav-item"><a class="nav-link active fw-bold" href="#">الرئيسية</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="#">الملف الشخصي</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="#">حلقاتي</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="index.html">تسجيل خروج</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+ 
+<!-- Welcome -->
+<section class="py-5">
+  <div class="container">
+    
+    <h1 class="mb-4 fw-bold text-end text-secondary">
+      مرحباً بك مجدداً، مريم
+    </h1>
+
+    <!-- Card -->
+    <div class="card border-0 shadow-sm rounded-4 bg-warning">
+      <div class="card-body p-4 d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+        <div class="mb-3 mb-md-0">
+          <span class="badge bg-warning-subtle text-dark mb-2">مستوى</span>
+          <h5 class="fw-bold text-primary-emphasis">متقدمة</h5>
+        </div>
+
+        <div class="text-center text-md-end">
+          <h4 class="fw-bold text-white">حلقة الأستاذة مريم الحارثية</h4>
+          <p class="fw-bold text-white">5 طالبات</p>
+        </div>
+
+        <div>
+          <button class="btn btn-light">تخصيص المظهر</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Content -->
+<section class="pb-5">
+  <div class="container">
+
+    <div class="row g-4">
+
+      <!-- Announcements -->
+      <div class="col-lg-6">
+        <div class="card border-warning rounded-4 h-100">
+          <div class="card-body">
+
+            <h5 class="text-warning fw-bold mb-3">إرسال إعلان</h5>
+
+            <textarea id="announcementInput" class="form-control mb-3" rows="4" placeholder="اكتب إعلانك هنا..."></textarea>
+
+            <button id="publishBtn" class="btn btn-success px-4">نشر</button>
+
+            <hr>
+
+            <div id="announcementsList">
+              <div class="mb-3 border-end border-3 border-success pe-2">
+                <div class="fw-bold">أهلاً بكن في الفصل الدراسي الجديد!</div>
+                <small class="text-muted">2024-03-01</small>
+              </div>
+
+              <div class="border-end border-3 border-success pe-2">
+                <div class="fw-bold">يرجى إحضار المصحف الخاص بك.</div>
+                <small class="text-muted">2024-03-02</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     <script>
+        document.getElementById("publishBtn").addEventListener("click", function() {
+            let input = document.getElementById("announcementInput");
+            let text = input.value.trim();
+
+            if (text === "") {
+                alert("الرجاء كتابة إعلان أولاً");
+                return;
+            }
+
+            // Get current date
+            let today = new Date();
+            let date = today.getFullYear() + "-" +
+                      String(today.getMonth() + 1).padStart(2, '0') + "-" +
+                      String(today.getDate()).padStart(2, '0');
+
+            // Create announcement div
+            let newAnnouncement = document.createElement("div");
+            newAnnouncement.className = "mb-3 border-end border-3 border-success pe-2";
+
+            newAnnouncement.innerHTML = `
+                <div class="fw-bold">${text}</div>
+                <small class="text-muted">${date}</small>
+            `;
+
+            // Add to top of list
+            let list = document.getElementById("announcementsList");
+            list.prepend(newAnnouncement);
+
+            // Clear textarea
+            input.value = "";
+        });
+      </script> 
+
+      <!-- Students -->
+      <div class="col-lg-6">
+        <div class="card border-warning rounded-4 h-100">
+          <div class="card-body">
+
+            <h5 class="text-warning fw-bold mb-3">طالباتي</h5>
+
+            <div class="table-responsive">
+              <table class="table align-middle">
+
+                <tbody>
+
+                  <tr>
+                    <td>
+                      <div class="fw-bold">عائشة البلوشية</div>
+                      <small class="text-muted">aisha@squ.edu.om</small>
+                    </td>
+                    <td>
+                      <span class="badge bg-warning text-dark">متقدمة</span>
+                    </td>
+                    <td class="text-warning fw-bold" dir="ltr">
+                      +968 9000 1111
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="fw-bold">سارة العامرية</div>
+                      <small class="text-muted">sara@squ.edu.om</small>
+                    </td>
+                    <td>
+                      <span class="badge bg-warning text-dark">متقدمة</span>
+                    </td>
+                    <td class="text-warning fw-bold" dir="ltr">
+                      +968 9000 2222
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="fw-bold">ليلى المعمرية</div>
+                      <small class="text-muted">layla@squ.edu.om</small>
+                    </td>
+                    <td>
+                      <span class="badge bg-warning text-dark">متقدمة</span>
+                    </td>
+                    <td class="text-warning fw-bold" dir="ltr">
+                      +968 9000 4444
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="fw-bold">هند الجابرية</div>
+                      <small class="text-muted">hind@squ.edu.om</small>
+                    </td>
+                    <td>
+                      <span class="badge bg-warning text-dark">متقدمة</span>
+                    </td>
+                    <td class="text-warning fw-bold" dir="ltr">
+                      +968 9000 4458
+                    </td>
+                  </tr>
+
+                </tbody>
+
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white border-top py-4">
+  <div class="container text-center">
+
+    <p class="mb-2">© 2026 نادي إتقان التلاوة</p>
+
+    <div class="d-flex justify-content-center gap-3">
+      <a href="contact.html" class="text-decoration-none text-dark">اتصل بنا</a>
+      <a href="rules.html" class="text-decoration-none text-dark">الشروط</a>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
