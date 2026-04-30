@@ -59,7 +59,7 @@
 
         <div class="text-center text-md-end">
           <h4 class="fw-bold text-white">حلقة الأستاذة مريم الحارثية</h4>
-          <p class="fw-bold text-white">5 طالبات</p>
+          <p class="fw-bold text-white" id="headerStudentCount">5 طالبات</p>
         </div>
 
         <div>
@@ -145,12 +145,16 @@
         <div class="card border-warning rounded-4 h-100">
           <div class="card-body">
 
-            <h5 class="text-warning fw-bold mb-3">طالباتي</h5>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="text-warning fw-bold m-0">طالباتي</h5>
+                <!-- Button to toggle form -->
+                <button onclick="toggleAddForm()" class="btn btn-sm btn-outline-warning fw-bold">+ إضافة طالبة</button>
+            </div>
 
+            <!-- Table -->
             <div class="table-responsive">
               <table class="table align-middle">
-
-                <tbody>
+                <tbody id="studentsTableBody">
 
                   <tr>
                     <td>
@@ -205,8 +209,34 @@
                   </tr>
 
                 </tbody>
-
               </table>
+            </div>
+
+            <!-- Adding student Form -->
+            <div id="addStudentForm" class="d-none mt-3 p-3 bg-light border rounded-3">
+                <h6 class="fw-bold text-secondary mb-3">بيانات الطالبة الجديدة</h6>
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <input type="text" id="newStudentName" class="form-control" placeholder="اسم الطالبة">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" id="newStudentEmail" class="form-control" placeholder="البريد الإلكتروني">
+                    </div>
+                    <div class="col-md-6">
+                        <select id="newStudentLevel" class="form-select">
+                            <option value="" selected disabled>المستوى</option>
+                            <option value="مبتدئة">مبتدئة</option>
+                            <option value="تمهيدية">تمهيدية</option>
+                            <option value="متقدمة">متقدمة</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="newStudentPhone" class="form-control" placeholder="رقم الهاتف">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <button onclick="addStudent()" class="btn btn-warning w-100 fw-bold">حفظ البيانات</button>
+                    </div>
+                </div>
             </div>
 
           </div>
@@ -218,18 +248,125 @@
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-white border-top py-4">
-  <div class="container text-center">
+<!-- Scripts -->
+<script>
+    // 1. Announcement Logic
+    document.getElementById("publishBtn").addEventListener("click", function() {
+        let input = document.getElementById("announcementInput");
+        let text = input.value.trim();
 
-    <p class="mb-2">© 2026 نادي إتقان التلاوة</p>
+        if (text === "") {
+            alert("الرجاء كتابة إعلان أولاً");
+            return;
+        }
 
-    <div class="d-flex justify-content-center gap-3">
-      <a href="contact.html" class="text-decoration-none text-dark">اتصل بنا</a>
-      <a href="rules.html" class="text-decoration-none text-dark">الشروط</a>
+        let today = new Date();
+        let date = today.getFullYear() + "-" +
+                  String(today.getMonth() + 1).padStart(2, '0') + "-" +
+                  String(today.getDate()).padStart(2, '0');
+
+        let newAnnouncement = document.createElement("div");
+        newAnnouncement.className = "mb-3 border-end border-3 border-success pe-2";
+
+        newAnnouncement.innerHTML = `
+            <div class="fw-bold">${text}</div>
+            <small class="text-muted">${date}</small>
+        `;
+
+        let list = document.getElementById("announcementsList");
+        list.prepend(newAnnouncement);
+        input.value = "";
+    });
+
+    // 2. Toggle Form Visibility
+    function toggleAddForm() {
+        const form = document.getElementById('addStudentForm');
+        // Toggle the 'd-none' class (Bootstrap utility for display:none)
+        if (form.classList.contains('d-none')) {
+            form.classList.remove('d-none');
+        } else {
+            form.classList.add('d-none');
+        }
+    }
+
+    // 3. Add Student Logic
+    function addStudent() {
+        // Get values from inputs
+        const name = document.getElementById('newStudentName').value;
+        const email = document.getElementById('newStudentEmail').value;
+        const level = document.getElementById('newStudentLevel').value;
+        const phone = document.getElementById('newStudentPhone').value;
+
+        // Validation
+        if(name === "" || email === "" || level === "" || phone === "") {
+            alert("الرجاء تعبئة جميع الحقول واختيار المستوى");
+            return;
+        }
+
+        // Create new row element
+        const newRow = document.createElement('tr');
+        
+        // Set HTML content
+        newRow.innerHTML = `
+            <td>
+              <div class="fw-bold">${name}</div>
+              <small class="text-muted">${email}</small>
+            </td>
+            <td>
+              <span class="badge bg-warning text-dark">${level}</span>
+            </td>
+            <td class="text-warning fw-bold" dir="ltr">
+              ${phone}
+            </td>
+        `;
+
+        // Append to table body
+        document.getElementById('studentsTableBody').appendChild(newRow);
+
+        // Clear inputs
+        document.getElementById('newStudentName').value = "";
+        document.getElementById('newStudentEmail').value = "";
+        document.getElementById('newStudentLevel').selectedIndex = 0;
+        document.getElementById('newStudentPhone').value = "";
+
+        // Hide the form again after adding
+        toggleAddForm();
+
+        // --- NEW: Update the student count in the header ---
+        updateStudentCount();
+    }
+
+
+    // update the student count in the header
+    function updateStudentCount() {
+        // Get the current count text (e.g., "5 طالبات")
+        const countElement = document.getElementById('headerStudentCount');
+        
+        // Extract the number from the text
+        let currentText = countElement.innerText;
+        let currentCount = parseInt(currentText.match(/\d+/)[0]);
+        
+        // Increment
+        let newCount = currentCount + 1;
+        
+        // Update text
+        countElement.innerText = newCount + " طالبات";
+    }
+</script>
+
+<!--footer-->
+<footer class="mt-5 bg-white text-center">
+    <hr class="border border-warning border-2 opacity-75 mx-auto">
+    <div class="container pb-4">
+        <p class="mb-3">© 2026 نادي إتقان التلاوة</p>
+        
+        <div class="d-flex justify-content-center gap-4">
+            <a href="contact.html" class="text-decoration-none text-secondary">اتصل بنا</a>
+            <a href="rules.html" class="text-decoration-none text-secondary">الشروط</a>
+        </div>
+        
     </div>
-
-  </div>
+    <br/>
 </footer>
 
 </body>
