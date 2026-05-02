@@ -78,7 +78,7 @@
         </h1>
         <div class="text-muted mb-4">انضم إلى نادي إتقان التلاوة</div>
 
-        <form dir="rtl" id="regForm" class="text-end">
+        <form dir="rtl" id="regForm" class="text-end" action="" method="post">
           <div class="mb-3">
             <label class="form-label text-warning fw-bold" for="role"
               >طالبة/معلمة <span class="text-danger">*</span></label
@@ -285,30 +285,25 @@
   <br/>
 </footer>
 <script>
-  const regForm = document.getElementById('regForm');
-
-  regForm.addEventListener('submit', function(event) {
-    // prevent submission befor the validation
-    event.preventDefault();
-
+  function formValidation(){
+    const regForm = document.getElementById('regForm');
     // variables
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const password = document.getElementById('password').value;
     const confirm = document.getElementById('confirm').value;
     const role = document.getElementById('role').value;
-
     //Patterns
     const emailPattern = /^s\d{6}@student\.squ\.edu\.om$/;
     const phonePattern = /^[97]\d{7}$/;
-    
+
     // Check Role selection
     if (role === "") {
       alert("يرجى اختيار الفئة (طالبة/معلمة)");
-      return;
+      role.focus();
+      return false;
     }
-
-    // Check SQU Email
+        // Check SQU Email
     if (!emailPattern.test(email)) {
       alert("البريد الإلكتروني غير صحيح. يجب أن يكون بصيغة s123456@student.squ.edu.om");
       return;
@@ -331,11 +326,9 @@
       alert("كلمتا المرور غير متطابقتين");
       return;
     }
-
-    // valid
-    alert("تم التحقق من البيانات بنجاح! جاري إتمام التسجيل...");
-
-  });
+    return true ; //Everything is valid
+  }
 </script>
+
 </body>
 </html>
