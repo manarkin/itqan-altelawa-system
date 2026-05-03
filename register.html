@@ -284,13 +284,17 @@
   </div>
   <br/>
 </footer>
+
 <script>
 document.getElementById('regForm'); 
 
 regForm.addEventListener('submit', function(event) {
     event.preventDefault(); 
 
-    clearErrors(); // remove any old error messages let ok = true;
+    clearErrors(); 
+    
+    // remove any old error messages 
+    let ok = true;
     const role = document.getElementById('role').value; 
     const firstName= document.getElementById('firstName').value.trim(); 
     const email = document.getElementById('email').value.trim(); 
@@ -301,23 +305,26 @@ regForm.addEventListener('submit', function(event) {
     // 1. Role check 
     if (role === '') {
       showError('role', 'Please select student or teacher'); 
-    ok = false; } 
+      ok = false; 
+    } 
     
     // 2. First name:letters only, min 2 chars 
     if (!/^[A-Za-z\u0600-\u06FF\s]{2,}$/.test(firstName)) {
-      showError('firstName', 'Name must be at least 2 letters'); ok = false; 
+      showError('firstName', 'Name must be at least 2 letters'); 
+      ok = false; 
     }
 
     // 3. SQU email pattern 
     const emailPat = /^s\d{6}@student\.squ\.edu\.om$/; 
     if (!emailPat.test(email)) {
-      showError('email', 'Must be: s123456@student.squ.edu.om'); ok = false; 
+      showError('email', 'Must be: s123456@student.squ.edu.om'); 
+      ok = false; 
     }
     
     // 4. Oman phone: starts with 9 or 7, 8 digits total 
     if (!/^[97]\d{7}$/.test(phone)) {
       showError('phone', 'Phone must start with 9 or 7 and be 8 digits'); 
-    ok = false; 
+      ok = false; 
     } 
     
     // 5.Password length 
@@ -329,7 +336,7 @@ regForm.addEventListener('submit', function(event) {
     // 6. Passwords match 
     if (password !== confirm) {
       showError('confirm', 'Passwords do not match'); 
-    ok = false;   
+      ok = false;   
     }
 
     if (ok) {
