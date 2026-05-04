@@ -81,7 +81,7 @@ function displayStudentsTable($studentsArray) {
     foreach ($studentsArray as $student) { 
         echo $student->toTableRow(); 
     }
-    
+
     echo '</tbody></table>'; 
 } 
 
@@ -95,4 +95,4 @@ displayStudentsTable($students);
 </div> 
 
 </body>
-</html
+</html>
