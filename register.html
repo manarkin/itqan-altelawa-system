@@ -78,7 +78,7 @@
         </h1>
         <div class="text-muted mb-4">انضم إلى نادي إتقان التلاوة</div>
 
-        <form dir="rtl" id="regForm" class="text-end">
+        <form dir="rtl" id="regForm" class="text-end" action="register.php" method="POST">
           <div class="mb-3">
             <label class="form-label text-warning fw-bold" for="role"
               >طالبة/معلمة <span class="text-danger">*</span></label
@@ -284,58 +284,84 @@
   </div>
   <br/>
 </footer>
+
 <script>
-  const regForm = document.getElementById('regForm');
+document.getElementById('regForm'); 
 
-  regForm.addEventListener('submit', function(event) {
-    // prevent submission befor the validation
-    event.preventDefault();
+regForm.addEventListener('submit', function(event) {
+    event.preventDefault(); 
 
-    // variables
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const password = document.getElementById('password').value;
-    const confirm = document.getElementById('confirm').value;
-    const role = document.getElementById('role').value;
-
-    //Patterns
-    const emailPattern = /^s\d{6}@student\.squ\.edu\.om$/;
-    const phonePattern = /^[97]\d{7}$/;
+    clearErrors(); 
     
-    // Check Role selection
-    if (role === "") {
-      alert("يرجى اختيار الفئة (طالبة/معلمة)");
-      return;
+    // remove any old error messages 
+    let ok = true;
+    const role = document.getElementById('role').value; 
+    const firstName= document.getElementById('firstName').value.trim(); 
+    const email = document.getElementById('email').value.trim(); 
+    const phone = document.getElementById('phone').value.trim(); 
+    const password = document.getElementById('password').value; 
+    const confirm = document.getElementById('confirm').value; 
+
+    // 1. Role check 
+    if (role === '') {
+      showError('role', 'Please select student or teacher'); 
+      ok = false; 
+    } 
+    
+    // 2. First name:letters only, min 2 chars 
+    if (!/^[A-Za-z\u0600-\u06FF\s]{2,}$/.test(firstName)) {
+      showError('firstName', 'Name must be at least 2 letters'); 
+      ok = false; 
     }
 
-    // Check SQU Email
-    if (!emailPattern.test(email)) {
-      alert("البريد الإلكتروني غير صحيح. يجب أن يكون بصيغة s123456@student.squ.edu.om");
-      return;
+    // 3. SQU email pattern 
+    const emailPat = /^s\d{6}@student\.squ\.edu\.om$/; 
+    if (!emailPat.test(email)) {
+      showError('email', 'Must be: s123456@student.squ.edu.om'); 
+      ok = false; 
     }
-
-    // Check Phone (starts with 9 or 7, total 8 digits)
-    if (!phonePattern.test(phone)) {
-      alert("رقم الهاتف غير صحيح. يجب أن يبدأ بـ 9 أو 7 ويتكون من 8 أرقام");
-      return;
-    }
-
-    // Check password length
+    
+    // 4. Oman phone: starts with 9 or 7, 8 digits total 
+    if (!/^[97]\d{7}$/.test(phone)) {
+      showError('phone', 'Phone must start with 9 or 7 and be 8 digits'); 
+      ok = false; 
+    } 
+    
+    // 5.Password length 
     if (password.length < 8) {
-      alert("كلمة المرور يجب أن تكون 8 رموز على الأقل");
-      return;
-    }
-
-    // Check if passwords match
+      showError('password', 'Password must be at least 8 characters');
+      ok = false; 
+    } 
+    
+    // 6. Passwords match 
     if (password !== confirm) {
-      alert("كلمتا المرور غير متطابقتين");
-      return;
+      showError('confirm', 'Passwords do not match'); 
+      ok = false;   
     }
 
-    // valid
-    alert("تم التحقق من البيانات بنجاح! جاري إتمام التسجيل...");
+    if (ok) {
+    alert('Registration data validated! Submitting...'); 
+    regForm.submit(); 
+    } 
+  }
+); 
+  
+// Shows a red error message below a field 
+function showError(fieldId, msg) { 
+  const field = document.getElementById(fieldId); 
+  const err = document.createElement('div');
+  err.className = 'text-danger small mt-1 reg-error'; 
+  err.textContent = msg;
+  field.parentNode.appendChild(err); 
+  field.classList.add('is-invalid'); 
+} 
 
-  });
+// Removes all previous errors 
+function clearErrors() {
+document.querySelectorAll('.reg-error').forEach(e => e.remove());
+document.querySelectorAll('.is-invalid').forEach(e => e.classList.remove('is-invalid'));
+}
 </script>
+
 </body>
 </html>
